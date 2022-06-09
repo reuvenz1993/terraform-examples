@@ -1,9 +1,9 @@
 module "aws_reverse_proxy" {
   # Available inputs: https://github.com/futurice/terraform-utils/tree/master/aws_reverse_proxy#inputs
-  # Check for updates: https://github.com/futurice/terraform-utils/compare/v11.0...master
+  # Check for updates: https://github.com/futurice/terraform-utils/compare/v11.0...master fdgfdgfdg
   source = "git::ssh://git@github.com/futurice/terraform-utils.git//aws_reverse_proxy?ref=v11.0"
 
-  origin_url             = "http://example.com/"           # note that this is just a dummy value to satisfy CloudFront, it won't ever be used with the override_* variables in place
+  origin_url             = "http://example.com/fdgfdh"           # note that this is just a dummy value to satisfy CloudFront, it won't ever be used with the override_* variables in place
   site_domain            = "${var.redirect_domain}"
   name_prefix            = "${var.name_prefix}"
   comment_prefix         = "${var.comment_prefix}"
