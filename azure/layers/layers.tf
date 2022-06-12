@@ -1,5 +1,5 @@
 /*
-    You may need service principals for eg. managing access to Key Vault.
+    You may need service principals for eg. managing access to Key Vault.fhdfhgfdjhgfdj
     However, that requires privileges to manage AD, which is outside of focus of this example.
 
 resource "null_resource" "service_principal_layer" {
