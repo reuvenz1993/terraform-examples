@@ -17,18 +17,6 @@ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMAAAKEY
 export AWS_DEFAULT_REGION=us-west-2
 echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 EOF
-  tags = merge({
-    Name = "${local.resource_prefix.value}-ec2"
-    }, {
-    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
-    git_file             = "terraform/aws/ec2.tf"
-    git_last_modified_at = "2020-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "347af3cd-4f70-4632-aca3-4d5e30ffc0b6"
-  })
 }
 
 resource "aws_ebs_volume" "web_host_storage" {
@@ -36,18 +24,6 @@ resource "aws_ebs_volume" "web_host_storage" {
   availability_zone = "${var.region}a"
   #encrypted         = false  # Setting this causes the volume to be recreated on apply 
   size = 1
-  tags = merge({
-    Name = "${local.resource_prefix.value}-ebs"
-    }, {
-    git_commit           = "d3439f0f2af62f6fa3521e14d6c27819ef8f12e1"
-    git_file             = "terraform/aws/ec2.tf"
-    git_last_modified_at = "2021-05-02 11:17:26"
-    git_last_modified_by = "nimrodkor@users.noreply.github.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "c5509daf-10f0-46af-9e03-41989212521d"
-  })
 }
 
 resource "aws_ebs_snapshot" "example_snapshot" {
@@ -138,18 +114,6 @@ resource "aws_subnet" "web_subnet" {
   availability_zone       = "${var.region}a"
   map_public_ip_on_launch = true
 
-  tags = merge({
-    Name = "${local.resource_prefix.value}-subnet"
-    }, {
-    git_commit           = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
-    git_file             = "terraform/aws/ec2.tf"
-    git_last_modified_at = "2021-05-02 11:16:31"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
-    yor_trace            = "0345f650-d280-4ca8-86c9-c71c38c0eda8"
-  })
 }
 
 resource "aws_subnet" "web_subnet2" {
