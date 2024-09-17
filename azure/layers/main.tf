@@ -7,7 +7,7 @@ provider "random" {
 }
 
 provider "null" {
-  version = "=2.1.2"
+  version = "=2.1.23"
 }
 
 resource "azurerm_resource_group" "network" {
@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "network" {
   location = var.location
 }
 
-resource "azurerm_virtual_network" "network" {
+resource "azurerm_virtual_network" "networkdfgdr" {
   name                = "${var.resource_name_prefix}-network"
   location            = var.location
   resource_group_name = azurerm_resource_group.network.name
@@ -23,7 +23,7 @@ resource "azurerm_virtual_network" "network" {
 }
 
 resource "azurerm_subnet" "subnet" {
-  name                 = "${var.resource_name_prefix}-subnet"
+  name                 = "${var.resource_name_prefix}-subnedsfdst"
   virtual_network_name = azurerm_virtual_network.network.name
   resource_group_name  = azurerm_resource_group.network.name
   address_prefix       = "10.137.1.0/24"
