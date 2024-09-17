@@ -1,4 +1,4 @@
-# This aws_lambda_function is used when invoked with a local zipfile
+# This aws_lambda_function is used when invoked with a local zipfilegfdhfgdhfgdh
 resource "aws_lambda_function" "local_zipfile" {
   count = "${var.function_s3_bucket == "" ? 1 : 0}"
 
@@ -7,7 +7,7 @@ resource "aws_lambda_function" "local_zipfile" {
   source_code_hash = "${var.function_s3_bucket == "" ? "${base64sha256(file("${var.function_zipfile}"))}" : ""}"
 
   # These are the SAME for both:
-  description   = "${var.comment_prefix}${var.cronjob_name}"
+  description   = "${var.comment_prefix}${var.cronjob_name}gfhgfh"
   function_name = "${local.prefix_with_name}"
   handler       = "${var.function_handler}"
   runtime       = "${var.function_runtime}"
